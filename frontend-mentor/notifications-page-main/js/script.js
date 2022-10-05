@@ -15,6 +15,7 @@ markReadBtn.addEventListener('click', function () {
     }
 });
 
+
 function altText() {
     for (let i = 0; i < username.length; i++) {
         document.querySelector('.user-photo img').alt = username[i].innerText;
