@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <div class="container">
+    <div class="main-content">
+      <div class="card-front">
+        <div class="demo-info">
+          <img src="images/card-logo.svg" alt="Card Logo">
+          <span class="demo-number">0000 0000 0000 0000</span>
+          <span class="demo-name">Jane Appleseed</span>
+          <span class="demo-exp">
+            <span class="demo-exp-mm">00</span>/<span class="demo-exp-yy">00</span>
+        </div>
+      </div>
+      <div class="card-back">
+        <span class="demo-cvc">000</span>
+      </div>
+      <div class="cardholder-content">
+        <div class="card-form">
+          <label for="cardholder">Cardholder Name</label>
+          <input type="text" id="cardholder" name="cardholder" placeholder="e.g. Jane Appleseed" onkeyup="this.value = this.value.replace(/[^a-z]/i, '')" required>
+          <label for="card-num">Card Number</label>
+          <input type="text" id="card-num" name="card-num" placeholder="e.g. 1234 5678 9123 0000" maxlength="16" onkeyup="this.value = this.value.replace(/[^0-9]/, '')" required>
+          <label for="exp-date" class="min-content">Exp. Date (MM/YY)</label>
+          <label for="cvc" class="min-content">CVC</label><br >
+          <input type="number" id="exp-month" name="exp-month" placeholder="MM" maxlength="2" style="margin-right: 10px;" required>
+          <input type="number" id="exp-year" name="exp-year" placeholder="YY" minlength="2" maxlength="2" required>
+          <input type="text" id="cvc" name="cvc" placeholder="e.g. 123" maxlength="3" onkeyup="this.value = this.value.replace(/[^0-9]/, '')" required>
+          <button type="submit" class="submit">Confirm</button>
+        </div>
+        <div class="success-screen hidden">
+            <img src="images/icon-complete.svg" alt="Complete">
+            <h2>Thank you!</h2> 
+            <p>We've added your card details</p>
+            <button type="submit" class="submit">Continue</button>
+        </div>
+      </div>   
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Joseph Warren</a>.
+  </div>
+
+  <script>
+  const demoName = document.querySelector('.demo-name');
+  const demoNum = document.querySelector('.demo-number');
+  const demoExpMM = document.querySelector('.demo-exp-mm');
+  const demoExpYY = document.querySelector('.demo-exp-yy');
+  const demoCvc = document.querySelector('.demo-cvc');
+
+  const cardName = document.getElementById('cardholder');
+  const cardNum = document.getElementById('card-num');
+  const cardExpMM = document.getElementById('exp-month');
+  const cardExpYY = document.getElementById('exp-year');
+  const cardCvc = document.getElementById('cvc');
+
+  addEventListener('keyup', () => {
+    if (cardNum.value) {
+      let demoNumArray = Array.from(document.querySelector('.demo-number').innerText);
+      demoNumArray = demoNumArray.filter(function (entry) { return entry.trim() != ''; });
+      const cardNumArray = Array.from(cardNum.value);
+
+      for (let i = 0; i < cardNumArray.length; i++) {
+        if (cardNumArray[i] === undefined){
+          demoNum.innerText = defaultValue;
+        } else {
+          demoNum.innerText = demoNumArray[i].replace(demoNumArray[i], cardNumArray[i]);
+        }
+      };
+    };
+  });
+
+  function defaultValue (undefined) {
+    undefined = undefined || '0';
+  }
+    // addEventListener('keyup', () => {
+
+    //   if (cardName.value) {
+    //     demoName.innerText = cardName.value;
+    //   } else {
+    //     demoName.innerText = 'Jane Appleseed';
+    //   }
+
+    //   if (cardNum.value) {
+    //     const firstSet = cardNum.value.slice(0, 4);
+    //     const secondSet = cardNum.value.slice(4, 8);
+    //     const thirdSet = cardNum.value.slice(8, 12);
+    //     const fourthSet = cardNum.value.slice(12, 16);
+
+    //     demoNum.innerText = `${firstSet} ${secondSet} ${thirdSet} ${fourthSet}`;
+    //   } else {
+    //     demoNum.innerHTML = '0000 0000 0000 0000';
+    //   }
+    //   addEventListener('change', () => {
+    //     if (cardExpMM.value) {
+    //       demoExpMM.innerText = cardExpMM.value;
+    //     } else {
+    //       demoExpMM.innerText = '00';
+    //     }
+
+    //     if (cardExpYY.value) {
+    //       demoExpYY.innerText = cardExpYY.value;
+    //     } else {
+    //       demoExpYY.innerText = '00';
+    //     }
+    //   });
+
+    //   if (cardCvc.value) {
+    //     demoCvc.innerText = cardCvc.value;
+    //   } else {
+    //     demoCvc.innerHTML = '000';
+    //   }
+
+    // });
+
+    const successEl = document.querySelector('.success-screen');
+    const cardFormEl = document.querySelector('.card-form');
+    const submitBtn = document.querySelector('.submit');
+
+    submitBtn.addEventListener('click', () => {
+      cardFormEl.classList.add('hidden');
+      successEl.classList.remove('hidden');
+    });
+
+
+
+  </script>
+</body>
+</html>
