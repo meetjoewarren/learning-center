@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+$bg-btn: hsl(0, 0%, 8%);
+$clr-btn: hsl(0, 0%, 98%);
+
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+nav {
+    overflow: hidden;
+    ul {
+        display: flex;
+        gap: 40px;
+        list-style-type: none;
+        padding: 25px 15px;
+    }
+}
+
+.hero__content {
+    button {
+        background: $bg-btn;
+        border-radius: 1rem;
+        color: $clr-btn;
+        font-weight: bold;
+        padding: 20px 30px;
+    }
+}
+
+// DESKTOP
+@media only screen and (min-width: 600px) {
+    .hero {
+      background: no-repeat url('../../images/image-hero-desktop.png');
+    }
+    .hero__content {
+      max-width: 60%;
+
+      h1 {
+        margin: 145px 0 70px 0;
+      }
+
+      p {
+        margin-bottom: 55px;
+      }
+    }
+  }
+  // MOBILE
+  @media only screen and (max-width: 600px) {
+    .hero {
+      background: center top / contain no-repeat url("../../images/image-hero-mobile.png");
+    }
+    .hero__content {
+      padding-top: 65%;
+      text-align: center;
+      width: 100%;
+  
+      h1 {
+        font-size: calc(32 / 18) + rem;
+        margin: 50px 0 30px 0;
+      }
+
+      p {
+        margin-bottom: 30px;
+      }
+    }
+}
+
+.attribution {
+    bottom: 0;
+    font-size: 11px;
+    position: fixed;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
