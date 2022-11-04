@@ -63,7 +63,7 @@
     .nav__item {
       &--cart {
         
-        .cart__icon {
+        .cart__link {
           position: relative;
 
           &--new {
@@ -92,4 +92,8 @@
       }
     }
   }
+}
+
+.cart__body--info span:nth-child(3) {
+  color: palevioletred !important;
 }

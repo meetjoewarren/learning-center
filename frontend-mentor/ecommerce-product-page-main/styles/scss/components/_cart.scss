@@ -26,6 +26,10 @@
     display: flex;
     padding: 25px 0 0;
 
+    &--empty {
+      padding: 25px 84px;
+    }
+
     &--remove {
       cursor: pointer;
     }

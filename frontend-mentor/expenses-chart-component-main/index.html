@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/css/main.css">
   
   <title>Frontend Mentor | Expenses chart component</title>
 
@@ -15,26 +16,31 @@
   </style>
 </head>
 <body>
-
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
+  <div class="container">
+    <div class="balance">
+      My balance
+      $921.48
+    </div>
+    <div class="overview">
+      <h2>Spending - Last 7 days</h2>
+      
+      <div class="graph">
+        mon
+        tue
+        wed
+        thu
+        fri
+        sat
+        sun
+      </div>
+      
+      <h4>Total this month</h4>
+      $478.33
+      
+      +2.4%
+      from last month
+    </div>
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.

@@ -2,12 +2,17 @@ const items = document.querySelectorAll('.item');
 const submitBtn = document.querySelector('button');
 
 for (const item of items) {
-    item.addEventListener('click', function () {
+    if (item.classList !== 'selected') {
         this.classList.add('selected');
-        const rate = this.innerText;
-        const str = `You selected ${rate} out of 5`;
+        const str = `You selected ${this.innerText} out of 5`;
         document.querySelector('.user-selection').innerText = str;
-    })
+    } else {
+        this.classList.remove('selected');
+    }
+    
+    item.addEventListener('click', function () {
+
+    });
 };
 
 submitBtn.addEventListener('click', function () {

@@ -24,79 +24,62 @@ body {
   padding-top: 185px;
 }
 
-.main-content {
-  display: grid;
+.main__content {
+  align-items: center;
+  display: flex;
   -moz-column-gap: 120px;
        column-gap: 120px;
-  grid-template: 1fr 1fr/1fr 1fr;
+  padding: 25px 50px;
 }
 
-.card-front, .card-back {
-  color: #fff;
-  min-width: 450px;
-  min-height: 250px;
-  margin: 15px 0;
+.card__demo {
+  display: flex;
+  flex-basis: 60%;
+  flex-direction: column;
 }
-
-.card-front {
-  justify-self: start;
+.card__front {
   background: url("../../images/bg-card-front.png") no-repeat;
+  display: grid;
   font-size: 14px;
+  justify-self: start;
   letter-spacing: 2px;
   padding: 30px;
   text-transform: uppercase;
 }
-.card-front img, .card-front .demo-number {
+.card__front img,
+.card__front .demo--number {
   grid-column: 1/3;
 }
-
-.card-back {
+.card__back {
+  align-self: flex-end;
   background: url("../../images/bg-card-back.png") no-repeat;
   justify-self: end;
   padding-left: 103px;
   position: relative;
 }
-
-.demo-info {
-  display: grid;
-  grid-template: 1fr 1fr/1fr 1fr;
+.card__front, .card__back {
+  color: #fff;
+  width: 450px;
+  min-height: 250px;
+  margin: 15px 0;
 }
-
-.demo-number {
-  display: block;
-  font-size: 26px;
-  letter-spacing: 5px;
-  padding-top: 40px;
+.card__info {
+  flex-basis: 40%;
 }
-
-.demo-name, .demo-exp {
-  padding-top: 25px;
+.card__form #exp-month,
+.card__form #exp-year,
+.card__form #cvc {
+  display: inline-block;
 }
-
-.demo-name {
-  justify-self: start;
+.card__form #exp-month,
+.card__form #exp-year {
+  width: calc(25% - 10px);
 }
-
-.demo-exp {
-  justify-self: end;
+.card__form #cvc {
+  margin-left: 20px;
+  width: calc(50% - 20px);
 }
-
-.demo-cvc {
-  top: 110px;
-  position: absolute;
-  right: 60px;
-}
-
-.cardholder-content {
-  grid-column: 2;
-  grid-row: 1/3;
-  justify-content: center;
-}
-
-.card-form {
-  max-width: 380px;
-}
-.card-form input {
+.card__form input {
   border: 1px solid hsl(0deg, 0%, 87%);
   border-radius: 10px;
   font-size: 18px;
@@ -104,20 +87,54 @@ body {
   padding: 15px;
   width: 100%;
 }
-.card-form input::-moz-placeholder {
+.card__form input::-moz-placeholder {
   color: hsl(280deg, 3%, 77%);
 }
-.card-form input:-ms-input-placeholder {
+.card__form input:-ms-input-placeholder {
   color: hsl(280deg, 3%, 77%);
 }
-.card-form input::placeholder {
+.card__form input::placeholder {
   color: hsl(280deg, 3%, 77%);
 }
-.card-form label {
+.card__form label {
   font-size: 14px;
   letter-spacing: 2px;
   margin-bottom: 10px;
   text-transform: uppercase;
+}
+.card__form .submit {
+  background: hsl(278deg, 66%, 11%);
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 380px;
+  padding: 20px 0;
+  width: 100%;
+}
+.card__form .submit:hover {
+  background: hsl(278deg, 66%, 21%);
+  cursor: pointer;
+}
+
+.demo--number {
+  display: block;
+  font-size: 26px;
+  letter-spacing: 5px;
+  padding-top: 40px;
+}
+.demo--name {
+  justify-self: start;
+}
+.demo--exp {
+  justify-self: end;
+}
+.demo--name, .demo--exp {
+  padding-top: 25px;
+}
+.demo--cvc {
+  top: 100px;
+  position: absolute;
+  right: 60px;
 }
 
 .success-screen {
@@ -136,20 +153,6 @@ body {
   margin: 30px 0 50px;
 }
 
-.submit {
-  background: hsl(278deg, 66%, 11%);
-  border: 0;
-  border-radius: 10px;
-  color: #fff;
-  max-width: 380px;
-  padding: 20px 0;
-  width: 100%;
-}
-.submit:hover {
-  background: hsl(278deg, 66%, 21%);
-  cursor: pointer;
-}
-
 .min-content {
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -161,20 +164,19 @@ body {
   visibility: hidden;
 }
 
-#exp-month,
-#exp-year,
-#cvc {
-  display: inline-block;
+input[data-state=invalid] {
+  border-color: hsl(0deg, 76%, 50%);
 }
 
-#exp-month,
-#exp-year {
-  width: calc(25% - 10px);
+input[data-state=valid] {
+  border-color: hsl(120deg, 76%, 50%);
 }
 
-#cvc {
-  margin-left: 20px;
-  width: calc(50% - 20px);
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
 .attribution {
@@ -185,4 +187,49 @@ body {
 }
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+@media only screen and (max-width: 1430px) {
+  .card__back {
+    margin-top: -126px;
+    order: 2;
+    z-index: 8;
+  }
+  .card__front {
+    order: 1;
+    margin-left: 20px;
+    z-index: 9;
+  }
+}
+@media only screen and (max-width: 1360px) {
+  .main__content {
+    -moz-column-gap: 60px;
+         column-gap: 60px;
+  }
+  .card__front {
+    margin-left: 30px;
+  }
+}
+@media only screen and (max-width: 680px) {
+  body {
+    background: url("../../images/bg-main-mobile.png") no-repeat;
+    background-size: contain;
+    min-width: 100vw;
+    min-height: auto;
+  }
+  .container {
+    padding-top: 32px;
+  }
+  .main__content {
+    flex-direction: column;
+  }
+  .card__front {
+    margin-top: -126px;
+    order: 2;
+    z-index: 10;
+  }
+  .card__back {
+    order: 1;
+    z-index: 9;
+  }
 }/*# sourceMappingURL=main.css.map */
