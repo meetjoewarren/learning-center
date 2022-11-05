@@ -7,8 +7,8 @@
 }
 
 body {
-  background: hsl(268deg, 75%, 9%);
-  color: hsl(52deg, 100%, 62%);
+  background: hsl(0deg, 0%, 90%);
+  color: hsl(60deg, 7%, 21%);
   font-family: "League Spartan", sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -27,9 +27,8 @@ body {
 }
 
 .flex-content {
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 100px;
 }
 
 .header,
@@ -38,6 +37,7 @@ body {
 }
 
 .header .theme-switcher {
+  display: flex;
   margin-left: auto;
 }
 
@@ -51,24 +51,24 @@ body {
   padding: 30px;
 }
 .main .display {
-  background: hsl(268deg, 71%, 12%);
+  background: hsl(0deg, 0%, 93%);
   font-size: 2.375rem;
   margin: 0 0 25px;
   text-align: right;
   width: 100%;
 }
 .main .keypad {
-  background: hsl(268deg, 71%, 12%);
+  background: hsl(0deg, 5%, 81%);
   display: grid;
   gap: 25px;
   grid-template: repeat(5, 1fr)/repeat(4, 1fr);
   text-align: center;
 }
 .main .keypad button {
-  background: hsl(268deg, 47%, 21%);
+  background: hsl(45deg, 7%, 89%);
   border-radius: 0.5rem;
-  box-shadow: 0 5px hsl(290deg, 70%, 36%);
-  color: hsl(52deg, 100%, 62%);
+  box-shadow: 0 5px hsl(35deg, 11%, 61%);
+  color: hsl(60deg, 7%, 21%);
   font-size: 2.375rem;
   padding: 15px 0;
 }
@@ -80,8 +80,8 @@ body {
   font-size: 1.5rem;
 }
 .main .keypad .accent {
-  background: hsl(281deg, 89%, 26%);
-  box-shadow: 0 4px hsl(285deg, 91%, 52%);
+  background: hsl(185deg, 42%, 37%);
+  box-shadow: 0 4px hsl(185deg, 58%, 25%);
   color: hsl(0deg, 0%, 100%);
 }
 .main .keypad .reset {
@@ -89,13 +89,13 @@ body {
   grid-column-end: span 2;
 }
 .main .keypad .equal {
-  background: hsl(176deg, 100%, 44%);
-  box-shadow: 0 5px hsl(177deg, 92%, 70%);
-  color: hsl(198deg, 20%, 13%);
+  background: hsl(25deg, 98%, 40%);
+  box-shadow: 0 5px hsl(25deg, 99%, 27%);
+  color: hsl(0deg, 0%, 100%);
   grid-column-start: 3;
   grid-column-end: span 2;
 }
 .main .key-accent {
-  background: hsl(281deg, 89%, 26%);
-  box-shadow: 0 -10px hsl(285deg, 91%, 52%);
+  background: hsl(185deg, 42%, 37%);
+  box-shadow: 0 -10px hsl(185deg, 58%, 25%);
 }/*# sourceMappingURL=main.css.map */

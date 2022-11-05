@@ -20,10 +20,16 @@
         <div class="theme-switcher">
           <h5>Theme</h5>
           <form action=".">
-            <label for="theme-a">1</label><label for="theme-b">2</label><label for="theme-c">3</label>
+            <div class="labels">
+              <label for="theme-a">1</label>
+              <label for="theme-b">2</label>
+              <label for="theme-c">3</label>
+            </div>
+            <div class="inputs">
               <input id="theme-a" type="radio" name="theme-a" checked="checked">
               <input id="theme-b" type="radio" name="theme-b" >
               <input id="theme-c" type="radio" name="theme-c" >
+            </div>
           </form>
         </div>
       </header>
@@ -33,22 +39,22 @@
           <button value="7" class="key">7</button>
           <button value="8" class="key">8</button>
           <button value="9" class="key">9</button>
-          <button value="DEL" class="key accent">DEL</button>
+          <button value="DEL" class="key-del accent">DEL</button>
 
           <button value="4" class="key">4</button>
           <button value="5" class="key">5</button>
           <button value="6" class="key">6</button>
-          <button value="+" class="key">+</button>
+          <button value="+" class="key-plus operator">+</button>
 
           <button value="1" class="key">1</button>
           <button value="2" class="key">2</button>
           <button value="3" class="key">3</button>
-          <button value="-" class="key">-</button>
+          <button value="-" class="key-minus operator">-</button>
 
-          <button value="." class="key">.</button>
+          <button value="." class="key float">.</button>
           <button value="0" class="key">0</button>
-          <button value="/" class="key">/</button>
-          <button value="x" class="key">x</button>
+          <button value="/" class="key-divide operator">/</button>
+          <button value="x" class="key-multiply operator">x</button>
           
           <button value="RESET" class="key reset accent">RESET</button>
           <button value="=" class="key-equal equal">=</button>

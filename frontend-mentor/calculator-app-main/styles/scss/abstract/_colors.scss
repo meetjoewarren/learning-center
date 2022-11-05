@@ -15,12 +15,14 @@
     // Text 
     $text-clr: hsl(221, 14%, 31%);
     $text-accent-clr: hsl(0, 0%, 100%);
+    $text-equal: hsl(0, 0%, 100%);
 
 // THEME B
     //Backgrounds 
     $main-background: hsl(0, 0%, 90%);
     $keypad-background: hsl(0, 5%, 81%);
     $display-background: hsl(0, 0%, 93%);
+    $test: hsl(0, 6%, 82%);
 
     // Keys 
     $key-background-default: hsl(45, 7%, 89%);
@@ -31,24 +33,25 @@
     $key-shadow-equal: hsl(25, 99%, 27%);
 
     // Text 
-    $text-clr: hsl(25, 99%, 27%);
+    $text-clr: hsl(60, 7%, 21%);
     $text-accent-clr: hsl(0, 0%, 100%);
+    $text-equal: hsl(0, 0%, 100%);
 
-// THEME C
-    //Backgrounds 
-    $main-background: hsl(268, 75%, 9%);
-    $keypad-background: hsl(268, 71%, 12%);
-    $display-background: hsl(268, 71%, 12%);
+// // THEME C
+//     //Backgrounds 
+//     $main-background: hsl(268, 75%, 9%);
+//     $keypad-background: hsl(268, 71%, 12%);
+//     $display-background: hsl(268, 71%, 12%);
 
-    // Keys 
-    $key-background-default: hsl(268, 47%, 21%);
-    $key-shadow-default: hsl(290, 70%, 36%);
-    $key-background-accent: hsl(281, 89%, 26%);
-    $key-shadow-accent: hsl(285, 91%, 52%);
-    $key-background-equal: hsl(176, 100%, 44%);
-    $key-shadow-equal: hsl(177, 92%, 70%);
+//     // Keys 
+//     $key-background-default: hsl(268, 47%, 21%);
+//     $key-shadow-default: hsl(290, 70%, 36%);
+//     $key-background-accent: hsl(281, 89%, 26%);
+//     $key-shadow-accent: hsl(285, 91%, 52%);
+//     $key-background-equal: hsl(176, 100%, 44%);
+//     $key-shadow-equal: hsl(177, 92%, 70%);
 
-    // Text 
-    $text-clr: hsl(52, 100%, 62%);
-    $text-accent-clr: hsl(0, 0%, 100%);
-    $text-equal: hsl(198, 20%, 13%);
+//     // Text 
+//     $text-clr: hsl(52, 100%, 62%);
+//     $text-accent-clr: hsl(0, 0%, 100%);
+//     $text-equal: hsl(198, 20%, 13%);
