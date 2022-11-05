@@ -56,6 +56,7 @@ addGlobalEventListeners('click', '.btn--add-to-cart', e => {
     const cartTitle = productTitle.textContent;
     const cartPrice = Number(document.querySelector('.product__info .price').textContent.replace("$", ""));
     const cartQuantity = Number(quantityInput.value);
+    // Cart Item / HTML
     const createListItem = document.createElement('li');
     createListItem.classList.add('cart__item');
     createListItem.innerHTML = `
@@ -75,7 +76,7 @@ addGlobalEventListeners('click', '.btn--add-to-cart', e => {
         </div>`;
     cartContainer.append(createListItem);
 
-    // Update Quantity Total
+    // Update Cart Item Total
     cartNotifIcon.style.display = 'block';
     const cartItemQuantity = document.querySelectorAll('.cart__body--info span:nth-child(3)');
     let counter = 0;
@@ -84,6 +85,7 @@ addGlobalEventListeners('click', '.btn--add-to-cart', e => {
       cartNotifIcon.textContent = counter;
     }
 
+    //// ATTEMPT # 1
     // for (const cartItem of cartItems) {
     //   const button = cartItem.querySelector('.cart__item--remove');
     //   button.addEventListener('click', function () {
@@ -93,18 +95,25 @@ addGlobalEventListeners('click', '.btn--add-to-cart', e => {
     //     console.log(cartNotifIcon.textContent);
     //   })
     // }
-    for (let r = 0; r < cartItems.length; r++) {
-      const button = document.querySelectorAll('.cart__item--remove');
-      button[r].addEventListener('click', function () {
-        const removeQuantityTotal = cartItems[r].querySelector('.cart__body--quantity');
-        cartNotifIcon.textContent = Number(cartNotifIcon.textContent) - Number(removeQuantityTotal.textContent.replace('x', ''));
-        cartItems[r].remove();
-      })
-    }
+    //// ATTEMPT #2
+    // for (let r = 0; r < cartItems.length; r++) {
+    //   const button = document.querySelectorAll('.cart__item--remove');
+    //   button[r].addEventListener('click', function () {
+    //     const removeQuantityTotal = cartItems[r].querySelector('.cart__body--quantity');
+    //     cartNotifIcon.textContent = Number(cartNotifIcon.textContent) - Number(removeQuantityTotal.textContent.replace('x', ''));
+    //     cartItems[r].remove();
+    //   })
+    // }
 
-    Array.from(cartItems).forEach(item => item.addEventListener('click', function () {
-      
-    }))
+    const removeButtons = document.querySelectorAll('.cart__item--remove');
+    for (let i = 0; i < cartItems.length; i++){
+      Array.from(removeButtons).forEach(button => button.addEventListener('click', function () {
+        const itemQuantity = Number(cartItems[i].querySelector('.cart__body--quantity').textContent.replace('x', ''));
+        cartNotifIcon.textContent = Number(cartNotifIcon.textContent) - itemQuantity;
+        console.log(itemQuantity)
+        button.parentNode.remove();
+      }))
+    }
   }
   else {
     cartNotifIcon.style.cssText = `
@@ -122,14 +131,14 @@ addGlobalEventListeners('click', '.btn--add-to-cart', e => {
 
 
 
-function updateCartTotal() {
-  let counter = 0;
-  for (let i = 0; i < cartItems.length; i++) {
-    const cartItemQuantity = document.querySelectorAll('.cart__body--info span:nth-child(3)');
-    counter += Number(cartItemQuantity[i].textContent.replace("x", ""));
-    cartNotifIcon.textContent = counter;
-  }
-}
+// function updateCartTotal() {
+//   let counter = 0;
+//   for (let i = 0; i < cartItems.length; i++) {
+//     const cartItemQuantity = document.querySelectorAll('.cart__body--info span:nth-child(3)');
+//     counter += Number(cartItemQuantity[i].textContent.replace("x", ""));
+//     cartNotifIcon.textContent = counter;
+//   }
+// }
 
 function addGlobalEventListeners(type, selector, callback) {
   document.addEventListener(type, e => {

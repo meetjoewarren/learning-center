@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+@import 'abstract/colors';
+
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $main-background;
+    color: $text-clr;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 540px;
+}
+
+.flex-content,
+.header,
+.main {
+    display: flex;
+}
+
+.flex-content {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header,
+.main {
+    width: 100%;
+}
+
+.header {
+    
+    .theme-switcher {
+        margin-left: auto;
+    }
+}
+
+.main {
+    flex-direction: column;
+    margin: 25px 0;
+
+    .display,
+    .keypad {
+        border-radius: 0.75rem;
+        padding: 30px;
+    }
+
+    .display {
+        background: $display-background;
+        font-size: calc(38 / 16) + rem;
+        margin: 0 0 25px;
+        text-align: right;
+        width: 100%;
+    }
+
+    .keypad {
+        background: $keypad-background;
+        display: grid;
+        gap: 25px;
+        grid-template: repeat(5, 1fr)/repeat(4, 1fr);
+        text-align: center;
+
+        button {
+            background: $key-background-default;
+            border-radius: 0.5rem;
+            box-shadow: 0 5px $key-shadow-default;
+            color: $text-clr;
+            font-size: calc(38 / 16) + rem;
+            padding: 15px 0;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .accent,
+        .equal {
+            font-size: calc(24 / 16) + rem;
+        }
+
+        .accent {
+            background: $key-background-accent;
+            box-shadow: 0 4px $key-shadow-accent;
+            color: $text-accent-clr;
+        }
+
+        .reset {
+            grid-column-start: 1;
+            grid-column-end: span 2;
+        }
+
+        .equal {
+            background: $key-background-equal;
+            box-shadow: 0 5px $key-shadow-equal;
+            color: $text-equal;
+            grid-column-start: 3;
+            grid-column-end: span 2;
+        }
+    }
+
+    .key {
+
+        &-accent {
+            background: $key-background-accent;
+            box-shadow: 0 -10px $key-shadow-accent;
+        }
+    }
+}

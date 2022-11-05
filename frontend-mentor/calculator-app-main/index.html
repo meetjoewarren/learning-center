@@ -3,24 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="styles/css/main.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="flex-content">
+      <header class="header">
+        <h1 class="title">calc</h1>
+        <div class="theme-switcher">
+          <h5>Theme</h5>
+          <form action=".">
+            <label for="theme-a">1</label><label for="theme-b">2</label><label for="theme-c">3</label>
+              <input id="theme-a" type="radio" name="theme-a" checked="checked">
+              <input id="theme-b" type="radio" name="theme-b" >
+              <input id="theme-c" type="radio" name="theme-c" >
+          </form>
+        </div>
+      </header>
+      <main class="main">
+        <div class="display">0</div>
+        <div class="keypad">
+          <button value="7" class="key">7</button>
+          <button value="8" class="key">8</button>
+          <button value="9" class="key">9</button>
+          <button value="DEL" class="key accent">DEL</button>
 
+          <button value="4" class="key">4</button>
+          <button value="5" class="key">5</button>
+          <button value="6" class="key">6</button>
+          <button value="+" class="key">+</button>
 
-  
-  <div class="attribution">
+          <button value="1" class="key">1</button>
+          <button value="2" class="key">2</button>
+          <button value="3" class="key">3</button>
+          <button value="-" class="key">-</button>
+
+          <button value="." class="key">.</button>
+          <button value="0" class="key">0</button>
+          <button value="/" class="key">/</button>
+          <button value="x" class="key">x</button>
+          
+          <button value="RESET" class="key reset accent">RESET</button>
+          <button value="=" class="key-equal equal">=</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </footer>
 </body>
 </html>

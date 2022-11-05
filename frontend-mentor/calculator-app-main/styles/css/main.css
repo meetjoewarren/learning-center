@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: hsl(268deg, 75%, 9%);
+  color: hsl(52deg, 100%, 62%);
+  font-family: "League Spartan", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 540px;
+}
+
+.flex-content,
+.header,
+.main {
+  display: flex;
+}
+
+.flex-content {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header,
+.main {
+  width: 100%;
+}
+
+.header .theme-switcher {
+  margin-left: auto;
+}
+
+.main {
+  flex-direction: column;
+  margin: 25px 0;
+}
+.main .display,
+.main .keypad {
+  border-radius: 0.75rem;
+  padding: 30px;
+}
+.main .display {
+  background: hsl(268deg, 71%, 12%);
+  font-size: 2.375rem;
+  margin: 0 0 25px;
+  text-align: right;
+  width: 100%;
+}
+.main .keypad {
+  background: hsl(268deg, 71%, 12%);
+  display: grid;
+  gap: 25px;
+  grid-template: repeat(5, 1fr)/repeat(4, 1fr);
+  text-align: center;
+}
+.main .keypad button {
+  background: hsl(268deg, 47%, 21%);
+  border-radius: 0.5rem;
+  box-shadow: 0 5px hsl(290deg, 70%, 36%);
+  color: hsl(52deg, 100%, 62%);
+  font-size: 2.375rem;
+  padding: 15px 0;
+}
+.main .keypad button:hover {
+  cursor: pointer;
+}
+.main .keypad .accent,
+.main .keypad .equal {
+  font-size: 1.5rem;
+}
+.main .keypad .accent {
+  background: hsl(281deg, 89%, 26%);
+  box-shadow: 0 4px hsl(285deg, 91%, 52%);
+  color: hsl(0deg, 0%, 100%);
+}
+.main .keypad .reset {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+}
+.main .keypad .equal {
+  background: hsl(176deg, 100%, 44%);
+  box-shadow: 0 5px hsl(177deg, 92%, 70%);
+  color: hsl(198deg, 20%, 13%);
+  grid-column-start: 3;
+  grid-column-end: span 2;
+}
+.main .key-accent {
+  background: hsl(281deg, 89%, 26%);
+  box-shadow: 0 -10px hsl(285deg, 91%, 52%);
+}/*# sourceMappingURL=main.css.map */
