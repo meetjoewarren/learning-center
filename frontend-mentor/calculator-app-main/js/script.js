@@ -5,6 +5,7 @@ const operator = document.querySelectorAll('.operator');
 keypad.addEventListener('click', e => {
   const key = e.target;
   const keyInput = key.textContent;
+  const displayContent = display.textContent;
 
   if (e.target.matches('button')) {
 
@@ -14,17 +15,21 @@ keypad.addEventListener('click', e => {
     }
   }
 
-  if (e.target.matches('button.key-del')) {
-    display.textContent = display.textContent.slice(0, -1);
+  if (e.target.matches('button.key-del')) { 
+    display.textContent = displayContent.slice(0, -1);
     console.log('del');
   }
 
   if (e.target.matches('button.operator')) {
-    var operator = Number(display.textContent) + keyInput;
+    var operator = Number(displayContent) + keyInput;
     console.log(operator);
   }
 
+  if (e.target.matches('button.decimal')) {
+    display.textContent = parseFloat(displayContent);
+  }
+
   if (e.target.matches('button.equal')) {
-    display.textContent = operator +  Number(display.textContent); 
+    display.textContent = operator +  Number(displayContent); 
   }
 })

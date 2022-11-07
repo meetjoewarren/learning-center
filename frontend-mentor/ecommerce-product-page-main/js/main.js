@@ -45,6 +45,14 @@ addGlobalEventListeners('click', '.btn--plus', e => {
   quantityInput.value++;
 })
 
+addGlobalEventListeners('click', '.cart__content', e => {
+  if (e.target.matches('.cart__item--remove')) {
+    const quantityToRemove = e.target.parentNode.querySelector('.cart__body--quantity');
+    console.log(quantityToRemove);
+    e.target.parentNode.remove();
+  }
+})
+
 // Add To Cart
 addGlobalEventListeners('click', '.btn--add-to-cart', e => {
   console.log('item added');
@@ -105,15 +113,15 @@ addGlobalEventListeners('click', '.btn--add-to-cart', e => {
     //   })
     // }
 
-    const removeButtons = document.querySelectorAll('.cart__item--remove');
-    for (let i = 0; i < cartItems.length; i++){
-      Array.from(removeButtons).forEach(button => button.addEventListener('click', function () {
-        const itemQuantity = Number(cartItems[i].querySelector('.cart__body--quantity').textContent.replace('x', ''));
-        cartNotifIcon.textContent = Number(cartNotifIcon.textContent) - itemQuantity;
-        console.log(itemQuantity)
-        button.parentNode.remove();
-      }))
-    }
+    // const removeButtons = document.querySelectorAll('.cart__item--remove');
+    // for (let i = 0; i < cartItems.length; i++){
+    //   Array.from(removeButtons).forEach(button => button.addEventListener('click', function () {
+    //     const itemQuantity = Number(cartItems[i].querySelector('.cart__body--quantity').textContent.replace('x', ''));
+    //     cartNotifIcon.textContent = Number(cartNotifIcon.textContent) - itemQuantity;
+    //     console.log(itemQuantity)
+    //     button.parentNode.remove();
+    //   }))
+    // }
   }
   else {
     cartNotifIcon.style.cssText = `
