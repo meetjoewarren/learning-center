@@ -1,0 +1,191 @@
+@import 'abstract/colors';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background: $bg-clr url('../../images/bg-mobile-light.jpg') no-repeat center top;
+  background-size: contain;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0 25px;
+}
+
+.header {
+  color: white;
+  display: flex;
+  margin: 50px 0 40px;
+
+  img {
+    height: 20px;
+    margin-left: auto;
+    width: auto;
+  }
+}
+
+.main {
+  ul {
+    li {
+      align-items: center;
+      display: flex;
+      list-style-type: none;
+
+      input {
+        margin-right: 12px;
+      }
+
+      img {
+        margin-left: auto;
+      }
+    }
+  }
+
+  // Drag & Drop Text
+  h4 {
+    color: $txt-clr-footer;
+    font-weight: 400;
+    margin-top: 35px;
+    text-align: center;
+  }
+}
+
+.create,
+.create-new,
+.todo,
+.actions {
+  background: white;
+  border-radius: 0.5rem;
+}
+
+.create {
+  margin-bottom: 15px;
+
+  &-new {
+    margin-right: 0 !important;
+    padding: 15px 20px;
+    width: 100%;
+  }
+}
+
+.todo {
+  margin-bottom: 15px;
+
+  &__list {
+
+    :is(&--item, &--details){
+      padding: 15px 20px;
+    }
+
+    &--item{
+      align-items: center;
+      border-bottom: 1px solid $brdr-clr;
+
+      .btn-del {
+        background: transparent;
+        margin-left: auto;
+      }
+    }
+   
+    &--details {
+      display: flex;
+
+      p + p {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__label {
+      align-items: center;
+      display: flex;
+    }
+}
+
+.actions {
+  margin-bottom: 15px;
+  padding: 15px 20px;
+
+  &__list {
+    color: $txt-clr-actions;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    
+    li {
+      padding: 0 10px;
+    }
+  }
+}
+
+.footer {
+  bottom: 0;
+  color: lighten($txt-clr-footer, 25%);
+  margin-bottom: 15px;
+  position: absolute;
+  width: 100%;
+
+  a {
+    color: lighten($txt-clr-footer, 17%);
+  }
+}
+
+
+@media only screen and (min-width: 600px) {
+
+  body {
+    background: $bg-clr url('../../images/bg-desktop-light.jpg') no-repeat center top;
+    background-size: contain;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 540px;
+  }
+}
+
+
+
+
+[type="checkbox"]{
+  opacity: 0;
+  position: absolute;
+
+  &:checked + label .custom__checkbox {
+    background: url('../../images/icon-check.svg') no-repeat center, linear-gradient(340deg, darkblue, darkorchid);
+    opacity: 0.7;
+  }
+}
+
+.custom__checkbox {
+  --size: 1rem;
+
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(to right, darkblue, darkorchid) border-box;
+  border: {
+    color: transparent;
+    radius: 50%;
+    style: solid;
+    width: 1px;
+  }
+  cursor: pointer;
+  display: inline-block;
+  height: var(--size);
+  width: var(--size);
+  margin-right: 0.75rem;
+  position: relative;
+  padding: 0.5rem;
+  transform: scale(1);
+  transition: transform 300ms ease-in-out;
+
+  :active {
+    background-color: linear-gradient(to right, darkblue, darkorchid) border-box;
+  }
+}
+
+.todo__list--item:hover .custom__checkbox{
+  transform: scale(1.1);
+}
